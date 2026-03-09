@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Finder</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div class="logo">&#x1FA78; BloodDonate</div>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Find a Blood Donation Center Near You</h1>
+      <p>Enter your zip code to locate nearby blood donation centers and schedule your life-saving donation today.</p>
+      <form class="zip-form" onsubmit="return handleSearch(event)">
+        <input
+          type="text"
+          id="zip-input"
+          placeholder="Enter your zip code"
+          maxlength="5"
+          pattern="\d{5}"
+          inputmode="numeric"
+          required
+        >
+        <button type="submit">Search</button>
+      </form>
+      <p id="zip-error" class="error" hidden>Please enter a valid 5-digit zip code.</p>
+    </section>
+
+    <section id="map-section" hidden></section>
+  </main>
+
+  <footer></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
