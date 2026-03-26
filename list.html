@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadCenters()">
+  <header>
+    <div class="logo">&#x1FA78; BloodDonate</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="list.html">Donation Centers</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="map-section" class="results-section">
+      <h2>Blood Donation Centers</h2>
+
+      <div class="filters">
+        <label for="state-filter">Filter by State:</label>
+        <select id="state-filter" onchange="applyFilters()">
+          <option value="ALL">All States</option>
+        </select>
+      </div>
+
+      <div id="results-list" class="center-list"></div>
+
+      <div class="see-more-wrap">
+        <button id="see-more-btn" type="button" onclick="showMoreCenters()" hidden>
+          See More
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
