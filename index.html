@@ -30,6 +30,18 @@
           required
         >
         <button type="submit">Search</button>
+
+        <!-- NEW Button -->
+        <input
+            type="number"
+            id="radius-input"
+            placeholder="Miles"
+            min="1"
+            max="100"
+            style="width: 100px;"
+            >
+        
+            <button type="button" onclick="handleRadiusSearch()">Find Within Radius</button>
       </form>
       <p id="zip-error" class="error" hidden>Please enter a valid 5-digit zip code.</p>
     </section>
@@ -40,5 +52,7 @@
   <footer></footer>
 
   <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="radius.js"></script>
 </body>
 </html>
