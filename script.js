@@ -168,3 +168,38 @@ function formatWebsite(url) {
   }
   return `https://${url}`;
 }
+
+
+
+function getFilteredCenters(centers, selectedState) {
+  return centers
+    .filter(center => {
+      if (selectedState === "ALL") return true;
+      return center.State === selectedState;
+    })
+    .sort((a, b) => {
+      const cityA = (a.City || "").toLowerCase();
+      const cityB = (b.City || "").toLowerCase();
+
+      if (cityA !== cityB) {
+        return cityA.localeCompare(cityB);
+      }
+
+      return (a.Name || "").localeCompare(b.Name || "");
+    });
+}
+
+function applyFilters() {
+  const stateFilter = document.getElementById("state-filter");
+  if (!stateFilter) return;
+
+  const selectedState = stateFilter.value;
+  filteredCenters = getFilteredCenters(allCenters, selectedState);
+
+  visibleCount = 10;
+  renderCenters();
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { getFilteredCenters };
+}
