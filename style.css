@@ -293,3 +293,41 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+.events-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.event-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.event-filters input,
+.event-filters select {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.event-card h3 {
+  margin-top: 0;
+}

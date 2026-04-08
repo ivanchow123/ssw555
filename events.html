@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donation Events</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Upcoming Blood Donation Events</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="list.html">Centers</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="events-section">
+      <h2>Upcoming Events</h2>
+      <p>
+        These events are shown separately from permanent blood donation centers.
+        Events that have already passed are automatically hidden.
+      </p>
+
+      <div class="event-filters">
+        <label for="stateFilter">Filter by State:</label>
+        <select id="stateFilter">
+          <option value="all">All States</option>
+        </select>
+
+        <label for="searchInput">Search:</label>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by event, city, or organization"
+        />
+      </div>
+
+
+
+      <button id="resetCentersBtn" type="button">Reset Centers</button>
+
+      
+      <div id="eventsContainer" class="events-container"></div>
+
+      
+    </section>
+
+    <section class="events-section">
+      <h2>Add New Event</h2>
+      <form id="eventForm" class="event-form">
+        <input type="text" id="name" placeholder="Event Name" required />
+        <input type="text" id="organization" placeholder="Organization" required />
+        <input type="date" id="date" required />
+        <input type="text" id="time" placeholder="Time (ex. 10:00 AM - 2:00 PM)" required />
+        <input type="text" id="location" placeholder="Location" required />
+        <input type="text" id="city" placeholder="City" required />
+        <input type="text" id="state" placeholder="State (NJ, NY, PA)" required />
+        <input type="text" id="address" placeholder="Address" required />
+        <textarea id="description" placeholder="Description" rows="4" required></textarea>
+        <button type="submit">Add Event</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="events.js"></script>
+</body>
+</html>
