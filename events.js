@@ -23,6 +23,42 @@ const defaultEvents = [
     address: "394 Central Ave, Jersey City, NJ 07307",
     description: "Community blood drive supporting nearby hospitals and emergency care centers."
   },
+  {
+  id: 3,
+  name: "Brooklyn Community Blood Drive",
+  organization: "New York Blood Outreach",
+  date: "2026-05-03",
+  time: "11:00 AM - 4:00 PM",
+  location: "Brooklyn Public Library, Brooklyn, NY",
+  city: "Brooklyn",
+  state: "NY",
+  address: "10 Grand Army Plaza, Brooklyn, NY 11238",
+  description: "A public donation event for local residents with walk-in and appointment-based donations."
+},
+{
+  id: 4,
+  name: "Philadelphia Spring Blood Event",
+  organization: "Pennsylvania Community Health Network",
+  date: "2026-05-10",
+  time: "8:30 AM - 1:30 PM",
+  location: "Liberty Hall, Philadelphia, PA",
+  city: "Philadelphia",
+  state: "PA",
+  address: "1200 Market St, Philadelphia, PA 19107",
+  description: "A seasonal blood drive supporting hospitals and emergency response centers across the city."
+},
+{
+  id: 5,
+  name: "Hartford Mobile Donation Day",
+  organization: "Connecticut Donor Services",
+  date: "2026-05-18",
+  time: "9:30 AM - 2:30 PM",
+  location: "Downtown Community Center, Hartford, CT",
+  city: "Hartford",
+  state: "CT",
+  address: "50 Main St, Hartford, CT 06103",
+  description: "A mobile donation event designed to increase donor access in central Connecticut."
+}
 ];
 
 const STORAGE_KEY = "bloodDonationEvents";
