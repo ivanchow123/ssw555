@@ -1,44 +1,10 @@
-function handleSearch(e) {
-  e.preventDefault();
 
-  const zip = document.getElementById('zip-input').value.trim();
-  const error = document.getElementById('zip-error');
-  const mapSection = document.getElementById('map-section');
-
-  if (!/^\d{5}$/.test(zip)) {
-    error.hidden = false;
-    mapSection.hidden = true;
-    return false;
-  }
-
-  error.hidden = true;
-
-  const query = encodeURIComponent('blood donation center near ' + zip);
-  const embedUrl = 'https://www.google.com/maps?q=' + query + '&output=embed';
-
-  mapSection.innerHTML =
-    '<h2>Donation Centers Near ' + zip + '</h2>' +
-    '<iframe ' +
-      'src="' + embedUrl + '" ' +
-      'allowfullscreen loading="lazy" ' +
-      'referrerpolicy="no-referrer-when-downgrade">' +
-    '</iframe>';
-  mapSection.hidden = false;
-  mapSection.scrollIntoView({ behavior: 'smooth' });
-
-  return false;
-}
-
-
-
-
-
-// Blood Center Table Creator helper functions...
-const DATA_URL = 'blood_donation_centers_merged.json';
+const DATA_URL = "blood_donation_centers_merged.json";
+const PAGE_SIZE = 9; //problem 2 fix
 
 let allCenters = [];
 let filteredCenters = [];
-let visibleCount = 9;
+let visibleCount = PAGE_SIZE;
 
 function loadCenters() {
   const resultsList = document.getElementById("results-list");
@@ -47,21 +13,48 @@ function loadCenters() {
   if (!resultsList || !stateFilter) return;
 
   fetch(DATA_URL)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`);
       }
       return response.json();
     })
-    .then(data => {
-      allCenters = (data.Results || []).slice();
+    .then((data) => {
+      allCenters = Array.isArray(data.Results) ? data.Results.slice() : [];
       populateStateFilter();
       applyFilters();
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error loading centers:", error);
       resultsList.innerHTML = `<p class="error">Could not load donation centers.</p>`;
     });
+}
+
+function getUniqueStates(centers) {
+  return [...new Set(centers.map((center) => center.State).filter(Boolean))].sort();
+}
+
+function compareCenters(a, b) {
+  const cityA = (a.City || "").toLowerCase();
+  const cityB = (b.City || "").toLowerCase();
+
+  if (cityA !== cityB) {
+    return cityA.localeCompare(cityB);
+  }
+
+  return (a.Name || "").localeCompare(b.Name || "");
+}
+
+
+//problem 1 fix
+function getFilteredCenters(centers, selectedState) {
+  return centers
+    .filter((center) => selectedState === "ALL" || center.State === selectedState)
+    .sort(compareCenters);
+}
+
+function getVisibleCenters(centers, count) {
+  return centers.slice(0, count);
 }
 
 function populateStateFilter() {
@@ -72,11 +65,7 @@ function populateStateFilter() {
     stateFilter.remove(1);
   }
 
-  const states = [...new Set(
-    allCenters
-      .map(center => center.State)
-      .filter(Boolean)
-  )].sort();
+  const states = getUniqueStates(allCenters);
 
   for (const state of states) {
     const option = document.createElement("option");
@@ -90,25 +79,8 @@ function applyFilters() {
   const stateFilter = document.getElementById("state-filter");
   if (!stateFilter) return;
 
-  const selectedState = stateFilter.value;
-
-  filteredCenters = allCenters
-    .filter(center => {
-      if (selectedState === "ALL") return true;
-      return center.State === selectedState;
-    })
-    .sort((a, b) => {
-      const cityA = (a.City || "").toLowerCase();
-      const cityB = (b.City || "").toLowerCase();
-
-      if (cityA !== cityB) {
-        return cityA.localeCompare(cityB);
-      }
-
-      return (a.Name || "").localeCompare(b.Name || "");
-    });
-
-  visibleCount = 9;
+  filteredCenters = getFilteredCenters(allCenters, stateFilter.value);
+  visibleCount = PAGE_SIZE;
   renderCenters();
 }
 
@@ -120,7 +92,7 @@ function renderCenters() {
 
   resultsList.innerHTML = "";
 
-  const centersToShow = filteredCenters.slice(0, visibleCount);
+  const centersToShow = getVisibleCenters(filteredCenters, visibleCount);
 
   if (centersToShow.length === 0) {
     resultsList.innerHTML = `<p>No donation centers found.</p>`;
@@ -152,7 +124,7 @@ function renderCenters() {
 }
 
 function showMoreCenters() {
-  visibleCount += 9;
+  visibleCount += PAGE_SIZE; //problem 2 fix
   renderCenters();
 }
 
@@ -169,37 +141,14 @@ function formatWebsite(url) {
   return `https://${url}`;
 }
 
-
-
-function getFilteredCenters(centers, selectedState) {
-  return centers
-    .filter(center => {
-      if (selectedState === "ALL") return true;
-      return center.State === selectedState;
-    })
-    .sort((a, b) => {
-      const cityA = (a.City || "").toLowerCase();
-      const cityB = (b.City || "").toLowerCase();
-
-      if (cityA !== cityB) {
-        return cityA.localeCompare(cityB);
-      }
-
-      return (a.Name || "").localeCompare(b.Name || "");
-    });
-}
-
-function applyFilters() {
-  const stateFilter = document.getElementById("state-filter");
-  if (!stateFilter) return;
-
-  const selectedState = stateFilter.value;
-  filteredCenters = getFilteredCenters(allCenters, selectedState);
-
-  visibleCount = 10;
-  renderCenters();
-}
-
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { getFilteredCenters };
+  module.exports = {
+    PAGE_SIZE,
+    compareCenters,
+    getUniqueStates,
+    getFilteredCenters,
+    getVisibleCenters,
+    formatAddress,
+    formatWebsite
+  };
 }

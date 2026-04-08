@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { getFilteredCenters } = require("./script.js");
+const { getFilteredCenters } = require("./old script.js");
 
 const dataPath = path.join(__dirname, "blood_donation_centers_merged.json");
 const raw = fs.readFileSync(dataPath, "utf8");
