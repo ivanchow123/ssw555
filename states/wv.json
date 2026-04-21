@@ -1,0 +1,39 @@
+{
+    "TotalCount": 1,
+    "Results": [
+        {
+            "Title": "The American National Red Cross - Huntington, WV",
+            "LowerTitle": "the american national red cross - huntington, wv",
+            "Name": "The American National Red Cross - Huntington, WV",
+            "LowerName": "the american national red cross - huntington, wv",
+            "Distance": 0,
+            "GoogleMapUrlSigned": "https://maps.googleapis.com/maps/api/staticmap?size=400x250\u0026maptype=roadmap\u0026format=jpeg\u0026zoom=13\u0026key=AIzaSyCnpNZx3HDMd2fGSvfVH0UxqLrSHKXEbPw\u0026center=520%2bKinetic%2bDr%0d%2bHuntington%2c%2bWV%2b25701-5271\u0026markers=color:0x009DD6%7C520%2bKinetic%2bDr%0d%2bHuntington%2c%2bWV%2b25701-5271\u0026signature=NoMF5aMudNXWQMHLQTTgL3lQZfo=",
+            "LastModified": "\/Date(-62135578800000)\/",
+            "LastModifiedReadable": "0001-01-01T00:00:00",
+            "Categories": [
+                "Donation Center",
+                "Ancillary"
+            ],
+            "SitefinityId": "865b9582-af20-42d7-a3fd-907ef11a5fa4",
+            "FullAddress": "520 Kinetic Dr\r\nHuntington, WV 25701-5271",
+            "City": "Huntington",
+            "LowerCity": "huntington",
+            "State": "WV",
+            "LowerState": "wv",
+            "Country": "USA",
+            "LowerCountry": "usa",
+            "PostalCode": "25701-5271",
+            "Phone": "1(800)733-2767",
+            "Fax": null,
+            "Email": "",
+            "MasterCustomerId": "000001034955",
+            "ContactName": null,
+            "LowerContactName": "voss, linda",
+            "DonorWebsite": "redcrossblood.org",
+            "DonorPhone": "1(800)733-2767",
+            "CovidWebsite": "",
+            "CovidPhone": "",
+            "AddressTypeCodeString": "WORK"
+        }
+    ]
+}

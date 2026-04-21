@@ -1,0 +1,39 @@
+{
+    "TotalCount": 1,
+    "Results": [
+        {
+            "Title": "The American National Red Cross – Wilmington, DE",
+            "LowerTitle": "the american national red cross – wilmington, de",
+            "Name": "The American National Red Cross – Wilmington, DE",
+            "LowerName": "the american national red cross – wilmington, de",
+            "Distance": 0,
+            "GoogleMapUrlSigned": "https://maps.googleapis.com/maps/api/staticmap?size=400x250\u0026maptype=roadmap\u0026format=jpeg\u0026zoom=13\u0026key=AIzaSyCnpNZx3HDMd2fGSvfVH0UxqLrSHKXEbPw\u0026center=5329%2bConcord%2bPike%2c%0d%2bWilmington%2c%2bDE%2b19803\u0026markers=color:0x009DD6%7C5329%2bConcord%2bPike%2c%0d%2bWilmington%2c%2bDE%2b19803\u0026signature=mVqDXl2jwI3OMiFj6l2VVuH18j4=",
+            "LastModified": "\/Date(-62135578800000)\/",
+            "LastModifiedReadable": "0001-01-01T00:00:00",
+            "Categories": [
+                "Donation Center",
+                "Ancillary"
+            ],
+            "SitefinityId": "03240df0-a8fd-4d26-85af-33bbcbaa91f3",
+            "FullAddress": "5329 Concord Pike,\r\nWilmington, DE 19803",
+            "City": "Wilmington",
+            "LowerCity": "wilmington",
+            "State": "DE",
+            "LowerState": "de",
+            "Country": "USA",
+            "LowerCountry": "usa",
+            "PostalCode": "19803",
+            "Phone": "",
+            "Fax": null,
+            "Email": "",
+            "MasterCustomerId": "000001878807",
+            "ContactName": null,
+            "LowerContactName": "",
+            "DonorWebsite": "redcrossblood.org",
+            "DonorPhone": "",
+            "CovidWebsite": "",
+            "CovidPhone": "",
+            "AddressTypeCodeString": "WORK"
+        }
+    ]
+}

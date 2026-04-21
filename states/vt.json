@@ -1,0 +1,40 @@
+{
+    "TotalCount": 1,
+    "Results": [
+        {
+            "Title": "The American National Red Cross, Burlington, VT",
+            "LowerTitle": "the american national red cross, burlington, vt",
+            "Name": "The American National Red Cross, Burlington, VT",
+            "LowerName": "the american national red cross, burlington, vt",
+            "Distance": 0,
+            "GoogleMapUrlSigned": "https://maps.googleapis.com/maps/api/staticmap?size=400x250\u0026maptype=roadmap\u0026format=jpeg\u0026zoom=13\u0026key=AIzaSyCnpNZx3HDMd2fGSvfVH0UxqLrSHKXEbPw\u0026center=32%2bNorth%2bProspect%2bStreet%2c%0d%2bBurlington%2c%2bVT%2b05401-3338\u0026markers=color:0x009DD6%7C32%2bNorth%2bProspect%2bStreet%2c%0d%2bBurlington%2c%2bVT%2b05401-3338\u0026signature=4ojDGUJ01Ulh0CkGU5OM8QOLM3Y=",
+            "LastModified": "\/Date(-62135578800000)\/",
+            "LastModifiedReadable": "0001-01-01T00:00:00",
+            "Categories": [
+                "Donation Center",
+                "Accepts COVID-19 Convalescent Plasma Donations",
+                "Institution Member"
+            ],
+            "SitefinityId": "23051145-0319-4e42-873e-28398cb1f737",
+            "FullAddress": "32 North Prospect Street,\r\nBurlington, VT 05401-3338",
+            "City": "Burlington",
+            "LowerCity": "burlington",
+            "State": "VT",
+            "LowerState": "vt",
+            "Country": "USA",
+            "LowerCountry": "usa",
+            "PostalCode": "05401-3338",
+            "Phone": "1(800)733-2767",
+            "Fax": null,
+            "Email": "",
+            "MasterCustomerId": "000000001062",
+            "ContactName": null,
+            "LowerContactName": "rios, jorge",
+            "DonorWebsite": "redcrossblood.org",
+            "DonorPhone": "1(800)733-2767",
+            "CovidWebsite": "redcrossblood.org/donate-blood/dlp/plasma-donations-from-recovered-covid-19-patients.html",
+            "CovidPhone": "",
+            "AddressTypeCodeString": "WORK"
+        }
+    ]
+}
